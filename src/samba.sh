@@ -23,6 +23,7 @@ fi
 mkdir -p "$share"
 [ -z "$(ls -A "$share")" ] && chmod 777 "$share"
 
+:'
 {      echo "[global]"
         echo "    server string = Dockur"
         echo "    netbios name = $hostname"
@@ -49,6 +50,7 @@ mkdir -p "$share"
         echo "    force user = root"
         echo "    force group = root"
 } > "/etc/samba/smb.conf"
+'
 
 {      echo "--------------------------------------------------------"
         echo " $APP for Docker v$(</run/version)..."
